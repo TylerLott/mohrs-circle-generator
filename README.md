@@ -1,6 +1,6 @@
 # mohrs-circle-generator
-generates a mohr's circle diagram given normal stresses and shear stress.
-generates png of matplotlib plot and displays in GUI
+This code Generates a mohr's circle diagram given normal stresses and shear stress.
+It generates a png of matplotlib plot and displays in GUI and allows user to save to specified file location
 
 What I learned:<br/>
   -basics of plotting with matplotlib<br/>
