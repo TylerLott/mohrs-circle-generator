@@ -2,7 +2,7 @@ import tempfile
 import shutil
 import tkinter as tk
 from tkinter import filedialog
-import Mohrs_Circle as mc
+import Mohrs_Circle as Mc
 import os
 from PIL import Image, ImageTk
 
@@ -47,10 +47,16 @@ class App(tk.Frame):
         self.user_angle.grid(row=8, column=1, sticky='w')
         self.user_angle.focus_set()
 
-        tk.Button(self, text='Create Mohrs circle', command=self.create_mohrs_circle).grid(row=10, column=1)
+        tk.Label(text_frame, text='Units: ').grid(row=10, column=0, sticky='w')
+        self.user_units = tk.Entry(text_frame, background='white', width=24)
+        self.user_units.insert(0, 'kPa')
+        self.user_units.grid(row=10, column=1, sticky='w')
+        self.user_units.focus_set()
+
+        tk.Button(self, text='Create Mohrs circle', command=self.create_mohrs_circle).grid(row=12, column=1)
 
         pic_frame = tk.Frame(self)
-        pic_frame.grid(row=12, column=0, rowspan=10, columnspan=10)
+        pic_frame.grid(row=14, column=0, rowspan=10, columnspan=10)
 
 
     # def show_image(self):
@@ -63,12 +69,13 @@ class App(tk.Frame):
 
 
     def create_mohrs_circle(self):
-        circle = mc.Mohrs_Find_Principal(
+        circle = Mc.MohrsFindPrincipal(
                                          float(self.user_sigA.get()),
                                          float(self.user_sigB.get()),
                                          float(self.user_tau.get()),
                                          tmpdir,
-                                         float(self.user_angle.get())
+                                         float(self.user_angle.get()),
+                                         self.user_units.get()
                                          )
         circle.visualize()
 
