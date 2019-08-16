@@ -2,12 +2,12 @@ import tempfile
 import shutil
 import tkinter as tk
 from tkinter import filedialog
-import Mohrs_Circle as Mc
+import MohrsCircle as Mc
 import os
 from PIL import Image, ImageTk
 
 tmpdir = tempfile.mkdtemp()
-print(tmpdir)
+# print(tmpdir)
 
 
 class App(tk.Frame):
@@ -117,7 +117,7 @@ class App(tk.Frame):
                                             defaultextension=".png",
                                             filetypes=(("png file", "*.png"),))
         save_image.save(save)
-        print(save)
+        # print(save)
 
 
 if __name__ == '__main__':

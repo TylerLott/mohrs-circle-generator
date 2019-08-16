@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import os
 
-# this messes wiht tkninter for some reason
+# this messes witt tkninter for some reason
 # matplotlib.use('Qt5Agg')
 
 SIGFIGS = 3
