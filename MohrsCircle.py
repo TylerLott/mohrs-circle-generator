@@ -198,7 +198,7 @@ class MohrsFindPrincipal:
 
         # saves as png
         path = os.path.join(self.temp_dir, 'mohrs.png')
-        print(path)
+        # print(path)
         plt.savefig(path)
 
 
